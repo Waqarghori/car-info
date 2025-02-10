@@ -24,11 +24,16 @@ let obj = {
     }
 }
 }
-
-let brandList = document.getElementById("brandList");
-let modelList = document.getElementById("modelList");
+let brand = document.getElementById("brandList");
+let model = document.getElementById("modelList");
 
 for (var key in obj){
-    brandList.innerHTML += `<option value="${key}">${key}</option>`;
+    brand.innerHTML += `<option value="${key}">${key.toUpperCase()}</option>`;
+}
+function handleBrandChange (){
+    model.innerHTML = "";
+    for(let key in obj[brand.value]){
+        model.innerHTML += `<option value="${key}">${key.toUpperCase()}</option>`;
+    }
 }
 
