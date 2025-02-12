@@ -3,24 +3,28 @@ let cars = {
         civic : {
             model : "Civic",
             year : 2015,
-            picture : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0taR1FEWIwyabIgfnRDmydfOqdvL80hUZyw&s"
+            picture : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0taR1FEWIwyabIgfnRDmydfOqdvL80hUZyw&s",
+            price : 150000
         },
         accord : {
             model : "Accord",
             year : 2010,
-            picture : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbZcrQqMohf-cHyhmQguCtMJ3PXkj3jV1X3Q&s"
+            picture : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbZcrQqMohf-cHyhmQguCtMJ3PXkj3jV1X3Q&s",
+            price : 200000
         }
     },
     toyota : {
         corolla : {
             model : "Corolla",
             year : 2012,
-            picture : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Ke5c6yZRymH3716JoV34RrBvHLZt6UPWWw&s"
+            picture : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Ke5c6yZRymH3716JoV34RrBvHLZt6UPWWw&s",
+            price : 180000
     },
     camry : {
         model : "Camry",
         year : 2018,
-        picture : "https://vehicle-images.dealerinspire.com/7057-110012190/thumbnails/large/4T1DAACKXSU564327/72296154ae317c7775e6451d3cdcb642.png"
+        picture : "https://vehicle-images.dealerinspire.com/7057-110012190/thumbnails/large/4T1DAACKXSU564327/72296154ae317c7775e6451d3cdcb642.png",
+        price : 220000
     }
 }
 }
@@ -161,8 +165,8 @@ function loadAllCars(){
                 </div>`
     }
     }
-
 }
+
 loadAllCars();
 function handleBrandChange(){
     models.innerHTML = `<option value="">ALL</option>`;
