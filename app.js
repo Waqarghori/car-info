@@ -69,65 +69,40 @@ let cars = {
     }
 };
 
+let a = 'toyota'
+console.log(cars[a]);
+console.log(cars['toyota']);
 
 
 let brands = document.getElementById("carBrands");
 let models = document.getElementById("carModels");
 let carList = document.getElementById("car-list");
 
-function loadAllCars(){
-    for (let brand in cars) {
-        brands.innerHTML += `<option value="${brand}">${brand.toUpperCase()}</option>`;
-        for (let model in cars[brand]) {
-            let detail = cars[brand][model];
-            carList.innerHTML += ` <div class="col">
-                    <div class="card" style="width: 18rem;" id="card">
-                        <img src="${detail.picture}" class="card-img-top car-image" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">${detail.model}</h5>
-                          <p class="card-text">${detail.year}</p>
-                          <a href="#" class="btn btn-primary">Rs ${detail.price}</a>
-                        </div>
-                      </div>
-                </div>`
-    }
-    }
+for(let key in cars){
+    brands.innerHTML += `<option value="${key}">${key}</option>`
 }
 
-loadAllCars();
 function handleBrandChange(){
-    models.innerHTML = `<option value="">ALL</option>`;
-    for (let keys in cars[brands.value]){
-        models.innerHTML += `<option value="${keys}">${keys.toUpperCase()}</option>`;
-        }
-        }
+    console.log(brands.value);
+    models.innerHTML = `<option value="">Select</option>`
 
-        function searchCar(){
-            carList.innerHTML = "";
-            if(brands.value && models.value){
-                let detail = cars[brands.value][models.value]
-                carList.innerHTML = ` <div class="col">
-                <div class="card" style="width: 18rem;" id="card">
-                    <img src="${detail.picture}" class="card-img-top car-image" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">${detail.model}</h5>
-                      <p class="card-text">${detail.year}</p>
-                      <a href="#" class="btn btn-primary">Rs ${detail.price}</a>
-                    </div>
-                  </div>
-            </div>`}
-             else if (brands.value){
-            for (let model in cars[brands.value]){
-                let detail = cars[brands.value][model]
-                carList.innerHTML += ` <div class="col">
-                <div class="card" style="width: 18rem;" id="card">
-                    <img src="${detail.picture}" class="card-img-top car-image" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">${detail.model}</h5>
-                      <p class="card-text">${detail.year}</p>
-                      <a href="#" class="btn btn-primary">Rs ${detail.price}</a>
-                    </div>
-                  </div>
-            </div>`
-        }}
-    else(loadAllCars())}
+    for (let key in cars[brands.value]){
+        models.innerHTML += `<option value="${key}">${key}</option>`
+    }
+
+}
+
+function searchCar(){
+    let container = document.getElementById('container');
+
+container.innerHTML = `<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>`;
+    window.location.href = 'result.html'
+}
+
