@@ -123,7 +123,9 @@ select, .searchbtn {
     flex-direction: column;
     justify-content: space-between;
 }
-
+#cont {
+    height: 100vh;
+}
 /* Footer */
 footer {
     background: #002b5b;
@@ -161,9 +163,4 @@ footer .social-media a:hover {
         font-size: 36px;
     }
 }
-main.hero {
-    padding-top: 100px; /* ya jitna aapka header ka height ho */
-}
-body {
-    padding-top: 100px; /* compensate for fixed header */
-}
+

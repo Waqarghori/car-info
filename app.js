@@ -69,10 +69,6 @@ let cars = {
     }
 };
 
-let a = 'toyota'
-console.log(cars[a]);
-console.log(cars['toyota']);
-
 
 let brands = document.getElementById("carBrands");
 let models = document.getElementById("carModels");
@@ -83,7 +79,7 @@ for(let key in cars){
 }
 
 function handleBrandChange(){
-    console.log(brands.value);
+
     models.innerHTML = `<option value="">Select</option>`
 
     for (let key in cars[brands.value]){
@@ -91,18 +87,21 @@ function handleBrandChange(){
     }
 
 }
+let container = document.getElementById('cont');
 
 function searchCar(){
-    let container = document.getElementById('container');
+    
+    //let result = cars[brands.value][models.value];
 
-container.innerHTML = `<div class="card" style="width: 18rem;">
+    container.innerHTML = `<div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div>`;
-    window.location.href = 'result.html'
+</div>`
+
+    location.href = 'result.html'
 }
 
