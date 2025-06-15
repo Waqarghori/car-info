@@ -85,6 +85,7 @@ select, .searchbtn {
 
 .hero-content {
     background: rgba(0, 0, 0, 0.5);
+    height: 250px;
     padding: 30px;
     border-radius: 10px;
 }
