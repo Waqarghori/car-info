@@ -76,9 +76,9 @@ let models = document.getElementById("carModels");
 let carList = document.getElementById("car-list");
 
  for (let brand in cars) {
-    console.log(brand);
+
     for (let model in cars[brand]) {
-        console.log(cars[brand][model]);
+
         let result = cars[brand][model]
 
          carList.innerHTML += `<div class="card" style="width: 18rem;">
