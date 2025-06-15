@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -19,7 +18,6 @@ footer {
     margin-top: auto;
 }
 
-/* Header Styles */
 header {
     position: fixed;
     z-index: 10;
@@ -72,7 +70,6 @@ select, .searchbtn {
     background-color: #e64a19;
 }
 
-/* Hero Section */
 .hero {
     background: url('https://img.freepik.com/free-photo/luxurious-car-parked-highway-with-illuminated-headlight-sunset_181624-60607.jpg') no-repeat center center/cover;
     color: white;
@@ -102,7 +99,6 @@ select, .searchbtn {
     margin-bottom: 20px;
 }
 
-/* Card Styling */
 .card {
     box-sizing: border-box;
     width: 100px;
@@ -117,7 +113,9 @@ select, .searchbtn {
 .card:hover {
     transform: scale(1.05);
 }
-
+.carList{
+    display: flex;
+}
 .card-body {
     display: flex;
     flex-direction: column;
@@ -126,7 +124,6 @@ select, .searchbtn {
 #cont {
     height: 100vh;
 }
-/* Footer */
 footer {
     background: #002b5b;
     color: white;
@@ -146,7 +143,6 @@ footer .social-media a:hover {
     color: #ff5722;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -164,3 +160,40 @@ footer .social-media a:hover {
     }
 }
 
+/* Container that holds the car cards */
+.carList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center cards horizontally */
+    gap: 20px; /* gap between cards */
+    padding: 20px;
+}
+
+/* Individual car card style */
+.carList .card {
+    width: 300px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.carList .card:hover {
+    transform: scale(1.03);
+}
+
+.carList .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.carList .card-body {
+    padding: 15px;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    height: 50px;
+}

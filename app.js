@@ -1,3 +1,5 @@
+
+
 let cars = {
     honda: {
         civic: {
@@ -23,7 +25,7 @@ let cars = {
         corolla: {
             model: "Corolla",
             year: 2012,
-            picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Ke5c6yZRymH3716JoV34RrBvHLZt6UPWWw&s",
+            picture: "https://images.hgmsites.net/hug/2011-toyota-corolla-4-door-sedan-auto-s-natl-angular-front-exterior-view_100345830_h.jpg",
             price: 180000
         },
         camry: {
@@ -69,39 +71,55 @@ let cars = {
     }
 };
 
-
 let brands = document.getElementById("carBrands");
 let models = document.getElementById("carModels");
 let carList = document.getElementById("car-list");
 
-for(let key in cars){
+ for (let brand in cars) {
+    console.log(brand);
+    for (let model in cars[brand]) {
+        console.log(cars[brand][model]);
+        let result = cars[brand][model]
+
+         carList.innerHTML += `<div class="card" style="width: 18rem;">
+  <img src="${result.picture}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${brands.value.toUpperCase()} : ${result.model} (${result.year})</h5>
+    <p class="card-text"><b>Price : ${result.price}</b></p>
+    <a href="#" class="btn btn-primary">Contact</a>
+  </div>
+</div>`
+
+    }
+}
+
+for (let key in cars) {
     brands.innerHTML += `<option value="${key}">${key}</option>`
 }
 
-function handleBrandChange(){
+function handleBrandChange() {
 
     models.innerHTML = `<option value="">Select</option>`
 
-    for (let key in cars[brands.value]){
+    for (let key in cars[brands.value]) {
         models.innerHTML += `<option value="${key}">${key}</option>`
     }
 
 }
-let container = document.getElementById('cont');
 
-function searchCar(){
-    
-    //let result = cars[brands.value][models.value];
+function searchCar() {;
+    let result = cars[brands.value][models.value];
 
-    container.innerHTML = `<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+    carList.innerHTML = `<div class="card" style="width: 18rem;">
+  <img src="${result.picture}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">${brands.value.toUpperCase()} : ${result.model} (${result.year})</h5>
+    <p class="card-text"><b>Price : ${result.price}</b></p>
+    <a href="#" class="btn btn-primary">Contact</a>
   </div>
 </div>`
 
-    location.href = 'result.html'
+    brands.value = '';
+    models.value = '';
 }
 
