@@ -107,7 +107,7 @@ function handleBrandChange() {
 
 }
 
-function searchCar() {;
+function searchCar() {
     let result = cars[brands.value][models.value];
 
     carList.innerHTML = `<div class="card" style="width: 18rem;">
