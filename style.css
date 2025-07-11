@@ -133,14 +133,24 @@ select, .searchbtn {
   justify-content: center;
 }
 
+.carList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
 /* Card Style */
 .carList .card {
-  width: 18rem;
+  width: 100%;
+  max-width: 300px;
   border: none;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .carList .card:hover {
@@ -152,11 +162,11 @@ select, .searchbtn {
   height: 200px;
   object-fit: cover;
   border-bottom: 1px solid #eee;
+  width: 100%;
 }
 
 .carList .card-body {
   padding: 1rem;
-  background-color: #fff;
 }
 
 .carList .card-title {
@@ -169,6 +179,7 @@ select, .searchbtn {
 .carList .card-text {
   font-size: 0.95rem;
   color: #555;
+  margin-bottom: 1rem;
 }
 
 .carList .btn-primary {
@@ -177,6 +188,7 @@ select, .searchbtn {
   padding: 0.4rem 1rem;
   font-size: 0.9rem;
   border-radius: 8px;
+  width: 100%;
 }
 
 .carList .btn-primary:hover {
@@ -230,13 +242,13 @@ footer .social-media a:hover {
 }
 
 @media (max-width: 768px) {
-  .carList .card {
-    width: 100%;
-    max-width: 90%;
+  .carList {
+    padding: 0.5rem;
+    gap: 1rem;
   }
 
-  .carList {
-    gap: 1rem;
+  .carList .card {
+    max-width: 95%;
   }
 
   .carList .card-img-top {
