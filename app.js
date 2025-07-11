@@ -81,7 +81,7 @@ let carList = document.getElementById("car-list");
 
         let result = cars[brand][model]
 
-         carList.innerHTML += `<div class="card" style="width: 18rem;">
+         carList.innerHTML += `<div class="card">
   <img src="${result.picture}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${brands.value.toUpperCase()} : ${result.model} (${result.year})</h5>
